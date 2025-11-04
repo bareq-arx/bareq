@@ -1,0 +1,32 @@
+{
+  "name": "bareq-landing-page",
+  "version": "1.0.0",
+  "description": "Professional landing page for BAREQ property project in New Damietta",
+  "main": "index.html",
+  "scripts": {
+    "start": "python3 -m http.server 8000",
+    "build": "./build.sh",
+    "serve": "cd dist && python3 -m http.server 8080",
+    "deploy:netlify": "netlify deploy --prod --dir=dist",
+    "deploy:vercel": "vercel dist --prod"
+  },
+  "keywords": [
+    "real-estate",
+    "landing-page",
+    "bareq",
+    "damietta",
+    "property",
+    "arabic",
+    "rtl"
+  ],
+  "author": "BAREQ Development Team",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yourusername/bareq-landing-page.git"
+  },
+  "engines": {
+    "node": ">=14.0.0"
+  }
+}
+

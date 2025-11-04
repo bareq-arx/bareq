@@ -1,0 +1,187 @@
+{
+  "project": {
+    "name_ar": "بريق",
+    "name_en": "BARIQ",
+    "location": {
+      "city": "دمياط الجديدة",
+      "district": "الحي الثالث",
+      "street": "امتداد شارع البشبيشي",
+      "between": "بين شارع 15 وشارع 17"
+    },
+    "size": {
+      "total_sqm": 23000,
+      "total_acres": 5.5,
+      "building_ratio": 45,
+      "plaza_sqm": 4500
+    },
+    "management": {
+      "company": "Rasell راسيل الشرق",
+      "country": "Saudi Arabia",
+      "services": [
+        "استقطاب البراندات",
+        "تحصيل الإيجار",
+        "صيانة شاملة",
+        "الحفاظ على هوية المشروع"
+      ]
+    }
+  },
+  "units": {
+    "commercial": {
+      "name_ar": "المحلات التجارية",
+      "area_range": {
+        "min": 30,
+        "max": 133
+      },
+      "price_per_sqm": {
+        "min": 130500,
+        "max": 196000
+      },
+      "starting_price": 3784500,
+      "finishing": "نصف تشطيب",
+      "discount": null,
+      "payment_plans": {
+        "under_9m": [
+          {
+            "down_payment": 10,
+            "installments_years": 4.5
+          },
+          {
+            "down_payment": 20,
+            "installments_years": 5.5
+          },
+          {
+            "down_payment": 30,
+            "installments_years": 6.5
+          }
+        ],
+        "over_9m": [
+          {
+            "down_payment": 10,
+            "installments_years": 5
+          },
+          {
+            "down_payment": 20,
+            "installments_years": 6
+          },
+          {
+            "down_payment": 30,
+            "installments_years": 7
+          }
+        ]
+      }
+    },
+    "offices": {
+      "name_ar": "المكاتب الإدارية",
+      "area_range": {
+        "min": 40,
+        "max": 110
+      },
+      "price_per_sqm": {
+        "min": 54500,
+        "max": 65500
+      },
+      "starting_price": 2180000,
+      "finishing": "ألترا سوبر لوكس + تكييفات",
+      "discount": 13,
+      "payment_plans": [
+        {
+          "down_payment": 10,
+          "installments_years": 3
+        },
+        {
+          "down_payment": "10 + 10 بعد 4 شهور",
+          "installments_years": 4
+        },
+        {
+          "down_payment": 20,
+          "installments_years": 5
+        }
+      ]
+    },
+    "clinics": {
+      "name_ar": "العيادات الطبية",
+      "area_range": {
+        "min": 40,
+        "max": 110
+      },
+      "price_per_sqm": {
+        "min": 54500,
+        "max": 65500
+      },
+      "starting_price": 2180000,
+      "finishing": "ألترا سوبر لوكس + تكييفات",
+      "discount": 13,
+      "payment_plans": [
+        {
+          "down_payment": 10,
+          "installments_years": 3
+        },
+        {
+          "down_payment": "10 + 10 بعد 4 شهور",
+          "installments_years": 4
+        },
+        {
+          "down_payment": 20,
+          "installments_years": 5
+        }
+      ]
+    },
+    "residential": {
+      "name_ar": "الشقق السكنية",
+      "areas": [160, 168, 174],
+      "bedrooms": 3,
+      "price_per_sqm": {
+        "min": 37500,
+        "max": 42000
+      },
+      "starting_price": 6300000,
+      "finishing": "ألترا سوبر لوكس",
+      "finishing_styles": ["Modern", "Classic", "Semi Classic"],
+      "discount": 10,
+      "delivery_years": 3
+    }
+  },
+  "features": {
+    "plaza": {
+      "size_sqm": 4500,
+      "amenities": [
+        "Food Court",
+        "نوافير راقصة",
+        "مناطق خضراء",
+        "بروجلات",
+        "أماكن للعائلات"
+      ]
+    },
+    "parking": {
+      "basement": "على مساحة المشروع بالكامل",
+      "outdoor_capacity": 180,
+      "storage": "أماكن تخزين في البيزمنت"
+    },
+    "standards": {
+      "ceiling_height": "4 - 4.20 متر",
+      "outdoor_space": "4 متر",
+      "walkway_width": "5 متر"
+    }
+  },
+  "contact": {
+    "phones": ["+20 123 456 7890", "+20 123 456 7891"],
+    "emails": ["info@bariq-newdamietta.com", "sales@bariq-newdamietta.com"],
+    "whatsapp": "+201234567890",
+    "working_hours": {
+      "days": "السبت - الخميس",
+      "time": "9:00 ص - 6:00 م"
+    }
+  },
+  "design": {
+    "colors": {
+      "primary": "#1a1a2e",
+      "secondary": "#16213e",
+      "accent": "#c29958",
+      "accent_hover": "#d4a968"
+    },
+    "fonts": {
+      "main": "Cairo"
+    }
+  }
+}
+
