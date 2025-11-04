@@ -1,0 +1,8 @@
+dist/
+node_modules/
+.git/
+*.sh
+*.md
+BUILD-INFO.txt
+.DS_Store
+
