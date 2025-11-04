@@ -1,5 +1,6 @@
 {
-  "buildCommand": "echo 'Static site - no build required'",
-  "outputDirectory": ".",
-  "installCommand": "echo 'No dependencies to install'"
+  "routes": [
+    { "handle": "filesystem" },
+    { "src": "/(.*)", "status": 200, "dest": "/index.html" }
+  ]
 }
