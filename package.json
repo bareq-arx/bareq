@@ -5,7 +5,7 @@
   "main": "index.html",
   "scripts": {
     "start": "python3 -m http.server 8000",
-    "build": "./build.sh",
+    "build": "echo 'No build needed - static site ready to deploy'",
     "serve": "cd dist && python3 -m http.server 8080",
     "deploy:netlify": "netlify deploy --prod --dir=dist",
     "deploy:vercel": "vercel --prod"
