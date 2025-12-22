@@ -192,7 +192,7 @@ if (leadForm) {
 // ======================
 // SEND LEAD VIA WHATSAPP
 // ======================
-const WHATSAPP_NUMBER = '201064973694';
+const WHATSAPP_NUMBER = '201018796933';
 
 function sendLeadViaWhatsApp(leadData) {
     // تحويل نوع الوحدة إلى نص مقروء
