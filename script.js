@@ -176,8 +176,9 @@ if (leadForm) {
         // Simulate API delay
         await new Promise(resolve => setTimeout(resolve, 1500));
 
-        // For now, just show success modal and store locally
+        // Store locally and send via WhatsApp
         storeLeadLocally(formData);
+        sendLeadViaWhatsApp(formData);
         showSuccessModal();
         leadForm.reset();
 
@@ -186,6 +187,76 @@ if (leadForm) {
         btnLoading.style.display = 'none';
         submitBtn.disabled = false;
     });
+}
+
+// ======================
+// SEND LEAD VIA WHATSAPP
+// ======================
+const WHATSAPP_NUMBER = '201064973694';
+
+function sendLeadViaWhatsApp(leadData) {
+    // تحويل نوع الوحدة إلى نص مقروء
+    const unitTypeLabels = {
+        'commercial': '🏪 محل تجاري',
+        'office': '💼 مكتب إداري',
+        'clinic': '🏥 عيادة طبية',
+        'residential': '🏠 شقة سكنية'
+    };
+    
+    // تحويل الغرض إلى نص مقروء
+    const purposeLabels = {
+        'investment': '📈 استثمار',
+        'personal': '🏠 استخدام شخصي'
+    };
+    
+    // تحويل وقت الاتصال إلى نص مقروء
+    const callTimeLabels = {
+        'morning': '🌅 صباحاً (9:00 ص - 12:00 م)',
+        'afternoon': '☀️ ظهراً (12:00 م - 3:00 م)',
+        'evening': '🌆 مساءً (3:00 م - 6:00 م)',
+        'night': '🌙 ليلاً (6:00 م - 9:00 م)',
+        'anytime': '📞 في أي وقت'
+    };
+    
+    // تنسيق تاريخ الزيارة
+    const visitDateFormatted = leadData.visitDate ? 
+        new Date(leadData.visitDate).toLocaleDateString('ar-EG', { 
+            weekday: 'long', 
+            year: 'numeric', 
+            month: 'long', 
+            day: 'numeric' 
+        }) : 'غير محدد';
+    
+    // بناء رسالة واتساب احترافية
+    const message = `
+━━━━━━━━━━━━━━━━━━━━━
+🏢 *طلب جديد - بريق BARIQ*
+━━━━━━━━━━━━━━━━━━━━━
+
+👤 *الاسم:* ${leadData.name}
+📱 *الهاتف:* ${leadData.phone}
+🏠 *نوع الوحدة:* ${unitTypeLabels[leadData.unitType] || leadData.unitType}
+🎯 *الغرض:* ${purposeLabels[leadData.purpose] || leadData.purpose}
+⏰ *وقت الاتصال:* ${callTimeLabels[leadData.callTime] || leadData.callTime}
+📅 *موعد الزيارة:* ${visitDateFormatted}
+🕐 *وقت الزيارة:* ${leadData.visitTime}
+${leadData.notes ? `📝 *ملاحظات:* ${leadData.notes}` : ''}
+
+━━━━━━━━━━━━━━━━━━━━━
+📆 *تاريخ الطلب:* ${leadData.formattedDate}
+━━━━━━━━━━━━━━━━━━━━━
+    `.trim();
+    
+    // ترميز الرسالة للاستخدام في URL
+    const encodedMessage = encodeURIComponent(message);
+    
+    // فتح واتساب مع الرسالة
+    const whatsappUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodedMessage}`;
+    
+    // فتح في نافذة جديدة
+    window.open(whatsappUrl, '_blank');
+    
+    console.log('WhatsApp message prepared:', message);
 }
 
 // ======================
